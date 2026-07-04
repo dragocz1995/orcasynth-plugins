@@ -22,6 +22,39 @@
       "provides": {
         "tools": 2
       }
+    },
+    {
+      "name": "image-gen",
+      "version": "0.1.0",
+      "description": "Image generation via the OpenAI Images API (gpt-image-1 by default). Generated images show directly in the chat.",
+      "category": "media",
+      "author": "Orca",
+      "apiVersion": "1",
+      "provides": {
+        "tools": 1
+      }
+    },
+    {
+      "name": "image-edit",
+      "version": "0.1.0",
+      "description": "Edit an existing image from a text instruction (image-to-image) via the OpenAI Images edits API. The result shows in the chat.",
+      "category": "media",
+      "author": "Orca",
+      "apiVersion": "1",
+      "provides": {
+        "tools": 1
+      }
+    },
+    {
+      "name": "web",
+      "version": "0.1.0",
+      "description": "Web research: web_search (Tavily) and web_fetch (fetch a page as readable text).",
+      "category": "research",
+      "author": "Orca",
+      "apiVersion": "1",
+      "provides": {
+        "tools": 2
+      }
     }
   ]
 }
