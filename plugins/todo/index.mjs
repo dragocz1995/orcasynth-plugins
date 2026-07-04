@@ -9,6 +9,9 @@ import { join } from 'node:path';
 
 const ok = (text) => ({ content: [{ type: 'text', text }], details: {} });
 const fail = (e) => ok(`Error: ${e instanceof Error ? e.message : String(e)}`);
+// A result that ALSO carries the structured list on `details.todos`, so the host can render a live todo
+// widget (CLI above the status bar, Discord in the streamed message) the same way it lifts edit diffs.
+const okTodos = (text, todos) => ({ content: [{ type: 'text', text }], details: { todos } });
 
 const STATUSES = ['pending', 'in_progress', 'completed'];
 
@@ -58,7 +61,7 @@ export function register(ctx) {
           status: STATUSES.includes(t.status) ? t.status : 'pending',
         })).filter((t) => t.title);
         store.write(todos);
-        return ok(`Updated todo list:\n\n${render(todos)}\n\n(Show this checklist to the user in your reply.)`);
+        return okTodos(`Updated todo list:\n\n${render(todos)}\n\n(Show this checklist to the user in your reply.)`, todos);
       } catch (e) { return fail(e); }
     },
   }));
@@ -69,7 +72,7 @@ export function register(ctx) {
     description: 'Return the current todo checklist as a markdown checklist.',
     parameters: Type.Object({}),
     execute: async () => {
-      try { return ok(render(store.read())); }
+      try { const todos = store.read(); return okTodos(render(todos), todos); }
       catch (e) { return fail(e); }
     },
   }));
