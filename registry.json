@@ -55,6 +55,17 @@
       "provides": {
         "tools": 2
       }
+    },
+    {
+      "name": "mcp",
+      "version": "0.1.0",
+      "description": "Bridge external MCP (Model Context Protocol) servers into the agent — their tools become available to the brain.",
+      "category": "tools",
+      "author": "Orca",
+      "apiVersion": "1",
+      "provides": {
+        "platforms": 1
+      }
     }
   ]
 }

@@ -1,0 +1,18 @@
+{
+  "name": "mcp",
+  "version": "0.1.0",
+  "apiVersion": "1",
+  "description": "Bridge external MCP (Model Context Protocol) servers into the agent. Configure stdio MCP servers and each server's tools become available to the brain as mcp__<server>__<tool>.",
+  "entry": "index.mjs",
+  "provides": { "platforms": ["mcp-lifecycle"] },
+  "icons": { "mcp__*": "🔌" },
+  "capabilities": { "network": true },
+  "configSchema": [
+    {
+      "key": "servers",
+      "label": "MCP servers",
+      "type": "mcpServers",
+      "hint": "External MCP servers to launch (stdio). Each server's tools appear to the agent as mcp__<server>__<tool>. Changes reconnect on save."
+    }
+  ]
+}
