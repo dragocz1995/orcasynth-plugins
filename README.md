@@ -1,6 +1,6 @@
-# orcasynth-plugins
+# elowen-plugins
 
-The plugin marketplace registry for [Orca](https://github.com/dragocz1995/orcasynth). Orca's plugin
+The plugin marketplace registry for [Elowen](https://github.com/dragocz95/elowen). Elowen's plugin
 marketplace (Settings → Plugins → Available) reads `registry.json` from this repo and installs plugins
 from `plugins/<name>/` on one click.
 
@@ -8,11 +8,11 @@ from `plugins/<name>/` on one click.
 
 ```
 registry.json        # the catalog index
-plugins/<name>/      # one folder per plugin: orca-plugin.json + index.mjs + optional i18n/
+plugins/<name>/      # one folder per plugin: elowen-plugin.json + index.mjs + optional i18n/
 ```
 
 Each catalog entry in `registry.json` carries display metadata (name, version, description, category,
-author). The authoritative manifest is each plugin's own `orca-plugin.json`.
+author). The authoritative manifest is each plugin's own `elowen-plugin.json`.
 
 ## Plugins
 

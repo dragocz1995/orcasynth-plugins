@@ -11,7 +11,7 @@
     },
     "userId": {
       "label": "ID paměti vlastníka",
-      "hint": "ID uživatele mem0 pro vzpomínky VLASTNÍKA instance (výchozí: orca). Ostatní odesílatelé dostávají vlastní paměť automaticky — propojené účty podle uživatelského jména Orca, neznámí odesílatelé podle ID platformy."
+      "hint": "ID uživatele mem0 pro vzpomínky VLASTNÍKA instance (výchozí: orca). Ostatní odesílatelé dostávají vlastní paměť automaticky — propojené účty podle uživatelského jména Elowen, neznámí odesílatelé podle ID platformy."
     }
   }
 }
